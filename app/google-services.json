@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "717489681499",
+    "firebase_url": "https://quebook-6f81e.firebaseio.com",
+    "project_id": "quebook-6f81e",
+    "storage_bucket": "quebook-6f81e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717489681499:android:992692a3f23e1748",
+        "android_client_info": {
+          "package_name": "com.zymbar.quebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717489681499-amm5bhrv50h186p5mnabb1tqu05q3gjk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ2cnGwL_7gEpvxTfa-4bqcr-C58r_GKM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
