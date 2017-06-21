@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import android.support.v4.content.LocalBroadcastManager
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -12,19 +13,20 @@ class MyFirebaseMessagingService : FirebaseMessagingService()  {
 
     private var TAG: String = "SERVICE2"
 
+    private var broadcaster: LocalBroadcastManager? = null
+
+    override fun onCreate() {
+        broadcaster = LocalBroadcastManager.getInstance(this)
+    }
+
     override fun onMessageReceived(p0: RemoteMessage?) {
         super.onMessageReceived(p0)
 
-        Log.d(TAG, "From: " + p0?.from)
+        var message: String = p0?.data!!["message"].toString()
 
-        // Check if message contains a data payload.
-        if (p0?.data?.size!! > 0) {
-            Log.d(TAG, "Message data payload: " + p0?.data["message"])
-        }
+        var i: Intent = Intent("data")
+        i.putExtra("message", message)
 
-        // Check if message contains a notification payload.
-        if (p0?.notification != null) {
-            Log.d(TAG, "Message Notification Body: " + p0?.notification.body)
-        }
+        broadcaster?.sendBroadcast(i)
     }
 }
